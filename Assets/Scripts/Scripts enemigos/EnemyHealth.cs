@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using System.Collections;
 
@@ -7,12 +6,23 @@ public class EnemyHealth : MonoBehaviour
     [Header("Health")]
     [SerializeField] private int maxHealth = 3;
     private int currentHealth;
-    
+
     [Header("Knockback")]
     [SerializeField] private float knockbackForce = 8f;
-    
+
+    [Header("Hit Stun")]
+    [SerializeField] private float hitStunDuration = 0.5f;
+    public bool IsHitStunned { get; private set; } = false;
+
+    [Header("Coins")]
+    [SerializeField] private GameObject coinPrefab;
+    [SerializeField] private int minCoins = 2;
+    [SerializeField] private int maxCoins = 10;
+
     private Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private AbsorbableEnemy _absorbable;
+    private HitEffect _hitEffect;
 
     public bool IsDead { get; internal set; }
 
@@ -20,39 +30,48 @@ public class EnemyHealth : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        _absorbable = GetComponent<AbsorbableEnemy>();
+        _hitEffect = GetComponent<HitEffect>();
     }
-    
+
     private void Start()
     {
         currentHealth = maxHealth;
     }
-    
+
     public void TakeDamage(int damage, Vector2 knockbackDirection)
     {
+        if (IsDead) return;
+
         currentHealth -= damage;
-        
-        Debug.Log($"{gameObject.name} recibió {damage} de daño. Vida restante: {currentHealth}/{maxHealth}");
-        
-        // Aplicar knockback
+
         if (rb != null)
         {
             rb.linearVelocity = Vector2.zero;
-            rb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(knockbackDirection.x, 0f) * knockbackForce, ForceMode2D.Impulse);
         }
-        
-        // Efecto visual de daño (parpadeo rápido)
-        StartCoroutine(DamageFlash());
+
+        if (_hitEffect != null)
+            _hitEffect.PlayHitEffect(transform.position);
+
         AudioManager.instance.PlaySFX(AudioManager.instance.hitEnemySFX);
 
-        // Verificar muerte
         if (currentHealth <= 0)
         {
+            spriteRenderer.color = Color.white;
             Die();
         }
+        else
+        {
+            StartCoroutine(DamageFlash());
+            StartCoroutine(HitStun());
+        }
     }
-    
-    private System.Collections.IEnumerator DamageFlash()
+
+    private IEnumerator DamageFlash()
     {
+        Animator anim = GetComponent<Animator>();
+        if (anim != null) anim.SetTrigger("Hit");
         if (spriteRenderer != null)
         {
             spriteRenderer.color = Color.red;
@@ -61,43 +80,44 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    [Header("Coins")]
-    [SerializeField] private GameObject coinPrefab;
-    [SerializeField] private int minCoins = 2;
-    [SerializeField] private int maxCoins = 10;
+    private IEnumerator HitStun()
+    {
+        IsHitStunned = true;
+        yield return new WaitForSeconds(hitStunDuration);
+        IsHitStunned = false;
+    }
 
     private void Die()
     {
         if (IsDead) return;
         IsDead = true;
 
-        StartCoroutine(DieSequence());
-    }
-    [SerializeField] private NPC npcToCall; // arrástralo desde el inspector
-
-    private IEnumerator DieSequence()
-    {
-        Debug.Log($"{gameObject.name} ha muerto!");
-
         HollowKnightMovement player = FindFirstObjectByType<HollowKnightMovement>();
-        AudioManager.instance.PlaySFX(AudioManager.instance.killEnemySFX);
-
         if (player != null)
             player.GainSoul(1);
 
-        // 🔹 Llamar al NPC
-        npcToCall.enabled = true;
-        npcToCall.transform.position = transform.position; // opcional: mover el NPC a la posición del enemigo
+        AudioManager.instance.PlaySFX(AudioManager.instance.killEnemySFX);
 
-        // 🔹 Animación de muerte (ejemplo)
+        if (_absorbable != null)
+            _absorbable.TriggerStun();
+        else
+            StartCoroutine(DieSequence());
+    }
+
+    public void ForceDie(bool wasAbsorbed)
+    {
+        StartCoroutine(DieSequence());
+    }
+
+    private IEnumerator DieSequence()
+    {
         Animator anim = GetComponent<Animator>();
         if (anim != null)
         {
             anim.SetTrigger("Death");
-            yield return new WaitForSeconds(1f); // ajusta a tu animación
+            yield return new WaitForSeconds(1f);
         }
 
-        // 🔹 Soltar monedas
         int coinAmount = Random.Range(minCoins, maxCoins + 1);
         for (int i = 0; i < coinAmount; i++)
         {
@@ -107,6 +127,4 @@ public class EnemyHealth : MonoBehaviour
 
         Destroy(gameObject);
     }
-
 }
-

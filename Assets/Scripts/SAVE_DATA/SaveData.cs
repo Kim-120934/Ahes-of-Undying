@@ -13,4 +13,6 @@ public class SaveData
     public bool hasProjectile;
     public bool hasDoubleJump;
     public string playerName;
+    public bool hasDash;
+    public bool dasherDefeated;
 }

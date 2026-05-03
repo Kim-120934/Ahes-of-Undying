@@ -67,7 +67,9 @@ public class NPC : MonoBehaviour
         else if (unlockType == UnlockType.DoubleJump)
             _player.UnlockDoubleJump();
         else if (unlockType == UnlockType.none)
-            _player.UnlockDoubleJump();
+        {
+            // No hace nada
+        }
     }
     public IEnumerator TriggerAbsorb()
     {

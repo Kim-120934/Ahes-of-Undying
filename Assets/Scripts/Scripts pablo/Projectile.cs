@@ -19,6 +19,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (other.CompareTag("SceneTrigger")) return;
         if (other.CompareTag("Door"))
         {
             Door door = other.GetComponent<Door>();
@@ -38,7 +39,7 @@ public class Projectile : MonoBehaviour
         {
             EnemyHealth enemy = other.GetComponent<EnemyHealth>();
             if (enemy != null)
-                enemy.TakeDamage(1, _direction);
+                enemy.TakeDamage(6, _direction);
             AudioManager.instance.PlaySFX(AudioManager.instance.projectileImpactSFX);
             Destroy(gameObject);
         }

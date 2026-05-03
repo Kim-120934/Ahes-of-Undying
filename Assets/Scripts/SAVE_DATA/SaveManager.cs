@@ -46,6 +46,8 @@ public class SaveManager : MonoBehaviour
         data.currentSoul = player.currentSoul;
         data.hasProjectile = player.hasProjectile;
         data.hasDoubleJump = player.hasDoubleJump;
+        data.hasDash = player.hasDash;
+        data.dasherDefeated = DasherPersistence.instance != null ? DasherPersistence.instance.IsDefeated : false;
         // Si ya hay un nombre guardado en ese slot, mantenerlo
         SaveData existingData = LoadGame(slot);
         data.playerName = (existingData != null && !string.IsNullOrEmpty(existingData.playerName))

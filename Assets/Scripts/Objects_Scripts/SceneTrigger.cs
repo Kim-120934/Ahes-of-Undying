@@ -8,12 +8,14 @@ public class SceneTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (SaveManager.instance != null)
-        {
-            SaveManager.instance.nextSpawnID = spawnPointID;
-            SaveManager.instance.SaveGame(SlotMenu.CurrentSlot);
-        }
+        if (!other.CompareTag("Player")) return;
 
-        SceneTransition.instance.LoadScene(nextScene);
+        if (SaveManager.instance != null)
+            SaveManager.instance.nextSpawnID = spawnPointID;
+
+        if (SceneTransition.instance != null)
+            SceneTransition.instance.LoadScene(nextScene);
+        else
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
     }
 }

@@ -9,6 +9,8 @@ TagManager:
   - plataformaMovil
   - Door
   - Destructible
+  - SceneTrigger
+  - Projectyle
   layers:
   - Default
   - TransparentFX

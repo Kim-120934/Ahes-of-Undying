@@ -45,10 +45,17 @@ public class HollowKnightMovement : MonoBehaviour
     private bool _dashRefilling;
     private Vector2 _lastDashDir;
     private bool _isDashAttacking;
+    public bool hasDash = false;
 
     //Attack
     private float _attackStartTime;
     private Vector2 _attackDirection;
+    private int _comboCount = 0;
+    private float _lastAttackTime = 0f;
+    [SerializeField] private float _comboWindow = 0.8f;
+    private bool _isHealing = false;
+    private float _lastAttackEndTime = 0f;
+    [SerializeField] private float _attackCooldown = 0.15f;
 
 
     //Health
@@ -101,6 +108,7 @@ public class HollowKnightMovement : MonoBehaviour
     [SerializeField] private GameObject _landEffectPrefab;
     [SerializeField] private TrailRenderer _dashTrail;
     [SerializeField] private ParticleSystem _footstepLeaves;
+    [SerializeField] private GameObject hitSplatPrefab;
     #endregion
 
     private void Awake()
@@ -117,6 +125,8 @@ public class HollowKnightMovement : MonoBehaviour
         IsFacingRight = true;
         _airJumpsLeft = Data.airJumpsAmount;
         _dashesLeft = Data.dashAmount;
+        
+
 
         // Initialize Health 
         currentHits = maxHitsPerLife;
@@ -135,6 +145,7 @@ public class HollowKnightMovement : MonoBehaviour
                 currentSoul = data.currentSoul;
                 hasProjectile = data.hasProjectile;
                 hasDoubleJump = data.hasDoubleJump;
+                hasDash = data.hasDash;
 
                 if (CoinManager.instance != null)
                     CoinManager.instance.AddCoins(data.coins);
@@ -205,6 +216,11 @@ public class HollowKnightMovement : MonoBehaviour
         #endregion
 
         #region INPUT HANDLER
+        if (_isHealing)
+        {
+            RB.linearVelocity = Vector2.zero;
+            return;
+        }
         _animator.SetBool("isGrounded", _isGrounded);
         _moveInput.x = Input.GetAxisRaw("Horizontal");
         _moveInput.y = Input.GetAxisRaw("Vertical");
@@ -411,6 +427,7 @@ public class HollowKnightMovement : MonoBehaviour
             DetermineAttackDirection();
             IsAttacking = true;
             _attackStartTime = Time.time;
+            StopCoroutine("PerformAttack");
             StartCoroutine(PerformAttack());
         }
         #endregion
@@ -523,6 +540,15 @@ public class HollowKnightMovement : MonoBehaviour
     #endregion
 
     #region GENERAL METHODS
+    public void SetAnimatorBool(string name, bool value)
+    {
+        _animator.SetBool(name, value);
+    }
+    public void PlayAbsorbAnimation()
+    {
+        _animator.SetBool("isAbsorbing", true);
+        _animator.Play("Absorb_anim", 0, 0f);
+    }
     private void SpawnEffect(GameObject prefab)
     {
         if (prefab == null) return;
@@ -799,12 +825,9 @@ public class HollowKnightMovement : MonoBehaviour
 
     private bool CanDash()
     {
-        // Refill dash when touching ground
+        if (!hasDash) return false;
         if (!IsDashing && _dashesLeft < Data.dashAmount && LastOnGroundTime > 0 && !_dashRefilling)
-        {
             StartCoroutine(RefillDash(1));
-        }
-
         return _dashesLeft > 0;
     }
 
@@ -815,19 +838,28 @@ public class HollowKnightMovement : MonoBehaviour
 
     private bool CanAttack()
     {
-        // No atacar durante dash o si ya estás atacando
-        if (IsDashing || IsAttacking)
-            return false;
-
+        if (IsDashing) return false;
+        if (Time.time - _lastAttackEndTime < _attackCooldown) return false;
         return true;
     }
     #endregion
 
 
     #region ATTACK METHODS 
+    private IEnumerator HitPause()
+    {
+        Time.timeScale = 0f;
+        yield return new WaitForSecondsRealtime(0.05f);
+        Time.timeScale = 1f;
+    }
     private void ShootProjectile()
     {
         if (!hasProjectile) return;
+        Debug.Log($"Soul antes de disparar: {currentSoul}");
+        if (currentSoul <= 0) return; // Sin soul no dispara
+        Debug.Log($"Soul después de disparar: {currentSoul}");
+
+        currentSoul--; // Consume 1 soul
 
         Vector2 direction = IsFacingRight ? Vector2.right : Vector2.left;
         GameObject proj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
@@ -867,39 +899,44 @@ public class HollowKnightMovement : MonoBehaviour
         }
     }
 
-   private IEnumerator PerformAttack()
-{
-    LastPressedAttackTime = 0;
-    
-    // Pequeño impulso en la dirección del ataque (como en HK)
-    if (_attackDirection == Vector2.down && !IsGrounded())
+    private IEnumerator PerformAttack()
     {
-        // Pogo: Pequeño impulso hacia arriba al atacar abajo en el aire
-        RB.linearVelocity = new Vector2(RB.linearVelocity.x, 0f);
-        RB.AddForce(Vector2.up * Data.jumpForce * 0.5f, ForceMode2D.Impulse);
-        Debug.Log("¡POGO! Rebote hacia arriba");
+        
+        _animator.SetBool("isAttacking", true);
+        LastPressedAttackTime = 0;
+
+        // Combo
+        if (Time.time - _lastAttackTime > _comboWindow)
+            _comboCount = 0;
+
+        // Solo avanzar combo si el golpe anterior conectó
+        _lastAttackTime = Time.time;
+
+        // Animación según combo
+        _animator.SetTrigger("Attack" + (_comboCount + 1));
+
+        if (_attackDirection == Vector2.down && !IsGrounded())
+        {
+            RB.linearVelocity = new Vector2(RB.linearVelocity.x, 0f);
+            RB.AddForce(Vector2.up * Data.jumpForce * 0.5f, ForceMode2D.Impulse);
+        }
+
+        yield return new WaitForSeconds(0.1f);
+        PlaySFXSafe(AudioManager.instance?.attackSFX);
+        DetectAndHitEnemies();
+       
+
+        float remainingDuration = Data.attackDuration - 0.1f;
+        yield return new WaitForSeconds(remainingDuration);
+        _lastAttackEndTime = Time.time;
+        IsAttacking = false;
+        _animator.SetBool("isAttacking", false);
     }
     
-    // Aquí irían las animaciones
-    // AnimHandler.SetTrigger("Attack_" + GetAttackDirectionString());
-    
-    // Esperar un frame para que la animación empiece
-    yield return new WaitForSeconds(0.1f);
-        PlaySFXSafe(AudioManager.instance?.attackSFX);
-
-        // DETECTAR Y GOLPEAR ENEMIGOS
-        DetectAndHitEnemies();
-    
-    // Duración del resto del ataque
-    float remainingDuration = Data.attackDuration - 0.1f;
-    yield return new WaitForSeconds(remainingDuration);
-    
-    IsAttacking = false;
-}
-private void DetectAndHitEnemies()
+    private void DetectAndHitEnemies()
 {
-    // Calcular posición del hitbox según dirección del ataque
-    Vector2 attackPosition = (Vector2)transform.position + (_attackDirection * Data.attackRange);
+        // Calcular posición del hitbox según dirección del ataque
+        Vector2 attackPosition = (Vector2)transform.position + (_attackDirection * Data.attackRange);
     
     // Detectar todos los colliders en el área de ataque
     Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(
@@ -909,8 +946,6 @@ private void DetectAndHitEnemies()
         Data.enemyLayer  // Necesitamos añadir esto al Data
     );
     
-    Debug.Log($"Enemigos detectados: {hitEnemies.Length}");
-    
     // Aplicar daño a cada enemigo golpeado
     foreach (Collider2D enemy in hitEnemies)
     {
@@ -919,8 +954,17 @@ private void DetectAndHitEnemies()
         
         if (enemyHealth != null)
         {
-            // Calcular dirección del knockback (desde el jugador hacia el enemigo)
-            Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
+                if (hitSplatPrefab != null)
+                    Instantiate(hitSplatPrefab, enemy.transform.position, Quaternion.identity);
+                if (_impulseSource != null)
+                    _impulseSource.GenerateImpulse();
+
+                StartCoroutine(HitPause());
+                _comboCount++;
+                if (_comboCount > 3) _comboCount = 1;
+                _lastAttackTime = Time.time;
+                // Calcular dirección del knockback (desde el jugador hacia el enemigo)
+                Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
             
             // Aplicar daño al enemigo
             enemyHealth.TakeDamage(Data.attackDamage, knockbackDirection);
@@ -936,7 +980,10 @@ private void DetectAndHitEnemies()
                 Debug.Log("¡POGO MEJORADO por golpear enemigo!");
             }
         }
-    }
+            BreakableChest chest = enemy.GetComponent<BreakableChest>();
+            if (chest != null)
+                chest.TakeDamage();
+        }
 }
 
     private string GetAttackDirectionString()
@@ -1018,21 +1065,31 @@ private void DetectAndHitEnemies()
         
         Debug.Log($"Knockback aplicado: {knockbackForce}");
     }
-    
+
     public void Heal(int amount)
     {
-        if (currentSoul <= 0)
-            return;
+        if (currentSoul <= 0) return;
+        if (currentHits >= maxHitsPerLife) return;
+        if (!IsGrounded()) return; // Solo en el suelo
 
-        if (currentHits >= maxHitsPerLife)
-            return;
+        StartCoroutine(HealSequence(amount));
+    }
+
+    private IEnumerator HealSequence(int amount)
+    {
+        _isHealing = true;
+        RB.linearVelocity = Vector2.zero;
+        _animator.SetTrigger("Heal");
+
+        yield return new WaitForSeconds(1f);
 
         currentSoul--;
         PlaySFXSafe(AudioManager.instance?.healSFX);
         currentHits += amount;
         currentHits = Mathf.Min(currentHits, maxHitsPerLife);
 
-        Debug.Log($"¡Curado! Hits: {currentHits}/{maxHitsPerLife} Alma: {currentSoul}/{maxSoul}");
+        _isHealing = false;
+        IsAttacking = false;
     }
     public void GainSoul(int amount)
     {
@@ -1077,12 +1134,23 @@ private void DetectAndHitEnemies()
         hasProjectile = true;
         Debug.Log("Proyectil desbloqueado!");
     }
-
+    private void OnDisable()
+    {
+        IsAttacking = false;
+        _isHealing = false;
+        _animator.SetBool("isAttacking", false);
+    }
     public void UnlockDoubleJump()
     {
         hasDoubleJump = true;
         _airJumpsLeft = 1;
         Debug.Log("¡Doble salto desbloqueado!");
+    }
+    public void UnlockDash()
+    {
+        hasDash = true;
+        _dashesLeft = Data.dashAmount;
+        Debug.Log("¡Dash desbloqueado!");
     }
     #endregion
 

@@ -53,7 +53,7 @@ public class MenuParticles : MonoBehaviour
         Image img = obj.AddComponent<Image>();
         img.sprite = circleSprite;
         float alpha = Random.Range(0.1f, 0.5f);
-        img.color = new Color(0.4f, 0.9f, 0.5f, alpha);
+        img.color = new Color(1f, 0.3f, 0f, 0.5f);
 
         float speed = Random.Range(minSpeed, maxSpeed);
         _particles.Add(rt);
