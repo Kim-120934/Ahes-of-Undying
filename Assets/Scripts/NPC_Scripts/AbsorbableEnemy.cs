@@ -9,7 +9,9 @@ using System.Collections;
 public class AbsorbableEnemy : MonoBehaviour
 {
 
-    public enum AbsorbUnlockType { Projectile, DoubleJump, Dash, None }
+    public enum AbsorbUnlockType { Projectile, DoubleJump, Dash, None, Souls }
+    [Header("Soul Reward")]
+    [SerializeField] private int soulReward = 0;
     [Header("Boss Options")]
     [SerializeField] private bool showAbilityUI = false;
     [SerializeField] private DasherPersistence persistence;
@@ -147,8 +149,11 @@ public class AbsorbableEnemy : MonoBehaviour
                 case AbsorbUnlockType.Dash:
                     _player.UnlockDash();
                     break;
+
             }
         }
+        if (soulReward > 0 && _player != null)
+            _player.GainSoul(soulReward);
         // Boss options
         if (persistence != null)
             persistence.OnDasherDefeated();

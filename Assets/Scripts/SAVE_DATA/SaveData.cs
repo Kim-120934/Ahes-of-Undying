@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 [Serializable]
 public class SaveData
@@ -15,4 +16,5 @@ public class SaveData
     public string playerName;
     public bool hasDash;
     public bool dasherDefeated;
+    public string[] destroyedWalls = new string[0];
 }

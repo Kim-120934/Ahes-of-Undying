@@ -66,6 +66,8 @@ public class NPC : MonoBehaviour
             _player.UnlockProjectile();
         else if (unlockType == UnlockType.DoubleJump)
             _player.UnlockDoubleJump();
+        if (AbilityUnlockUI.instance != null)
+            AbilityUnlockUI.instance.Show();
         else if (unlockType == UnlockType.none)
         {
             // No hace nada

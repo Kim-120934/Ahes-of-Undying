@@ -11,11 +11,14 @@ public class SceneTrigger : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         if (SaveManager.instance != null)
+        {
             SaveManager.instance.nextSpawnID = spawnPointID;
+            SaveManager.instance.SaveGame(SlotMenu.CurrentSlot);
+        }
 
         if (SceneTransition.instance != null)
             SceneTransition.instance.LoadScene(nextScene);
         else
-            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
+            SceneManager.LoadScene(nextScene);
     }
 }

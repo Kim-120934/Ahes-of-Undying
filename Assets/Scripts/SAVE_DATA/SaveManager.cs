@@ -47,12 +47,26 @@ public class SaveManager : MonoBehaviour
         data.hasProjectile = player.hasProjectile;
         data.hasDoubleJump = player.hasDoubleJump;
         data.hasDash = player.hasDash;
-        data.dasherDefeated = DasherPersistence.instance != null ? DasherPersistence.instance.IsDefeated : false;
-        // Si ya hay un nombre guardado en ese slot, mantenerlo
+        data.dasherDefeated = DasherPersistence.instance != null ?
+    DasherPersistence.instance.IsDefeated :
+    (LoadGame(slot)?.dasherDefeated ?? false);
         SaveData existingData = LoadGame(slot);
         data.playerName = (existingData != null && !string.IsNullOrEmpty(existingData.playerName))
             ? existingData.playerName
             : _pendingName;
+        if (existingData != null && existingData.destroyedWalls != null)
+        {
+            data.destroyedWalls = existingData.destroyedWalls;
+            
+        }
+        // Mantener lista de paredes destruidas
+        if (existingData != null && existingData.destroyedWalls != null)
+            data.destroyedWalls = existingData.destroyedWalls;
+
+        // Mantener dasherDefeated si no hay DasherPersistence en escena
+        data.dasherDefeated = DasherPersistence.instance != null ?
+            DasherPersistence.instance.IsDefeated :
+            (existingData?.dasherDefeated ?? false);
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(GetSavePath(slot), json);
         Debug.Log("Partida guardada en slot " + slot);
@@ -89,4 +103,5 @@ public class SaveManager : MonoBehaviour
             Debug.Log("Partida borrada del slot " + slot);
         }
     }
+
 }

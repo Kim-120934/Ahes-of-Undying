@@ -58,13 +58,12 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        UnityEngine.SceneManagement.SceneManager.sceneLoaded += OnSceneLoaded;
-        PlayMusic(gameMusic);
+        // No llamar aquí, OnSceneLoaded lo gestiona
     }
 
     private void OnSceneLoaded(UnityEngine.SceneManagement.Scene scene, UnityEngine.SceneManagement.LoadSceneMode mode)
     {
-        if (scene.name == "MainMenu")
+        if (scene.name == "Main_Menu")
             PlayMusic(menuMusic);
         else
             PlayMusic(gameMusic);
@@ -81,6 +80,10 @@ public class AudioManager : MonoBehaviour
     {
         if (clip == null) return;
         if (musicSource == null) return;
+
+        // Si ya está sonando el mismo clip no reiniciar
+        if (musicSource.clip == clip && musicSource.isPlaying) return;
+
         musicSource.clip = clip;
         musicSource.Play();
     }

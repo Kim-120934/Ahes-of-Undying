@@ -3540,6 +3540,10 @@ PrefabInstance:
       propertyPath: hitSplatPrefab
       value: 
       objectReference: {fileID: 4524876369578015486, guid: ac2915217c2a8c446ad6b429884db2c5, type: 3}
+    - target: {fileID: 1460524175465056236, guid: f9f819aefdedd1a48af8e62fda3148b0, type: 3}
+      propertyPath: _footstepLeaves
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3493817474054858131, guid: f9f819aefdedd1a48af8e62fda3148b0, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3621,7 +3625,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8260847729143248259, guid: f9f819aefdedd1a48af8e62fda3148b0, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9f819aefdedd1a48af8e62fda3148b0, type: 3}
@@ -4148,6 +4153,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1039882141861244514, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f985db1465e4c224fafe819949f21407, type: 3}
+    - target: {fileID: 1321939222225725225, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c8a3199c566936140b9f5ecbf7d7e8fe, type: 3}
+    - target: {fileID: 5373008389819637915, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 640
+      objectReference: {fileID: 0}
+    - target: {fileID: 5373008389819637915, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 252
+      objectReference: {fileID: 0}
     - target: {fileID: 5457081991728989290, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
       propertyPath: m_Name
       value: AllCanvas
@@ -4231,6 +4252,18 @@ PrefabInstance:
     - target: {fileID: 8327162234428858748, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547130060704876354, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 640
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547130060704876354, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 252
+      objectReference: {fileID: 0}
+    - target: {fileID: 8547130060704876354, guid: 26daac18447af9e4ab671736fdddd130, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 38
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

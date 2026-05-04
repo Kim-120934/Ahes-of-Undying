@@ -46,6 +46,7 @@ public class HollowKnightMovement : MonoBehaviour
     private Vector2 _lastDashDir;
     private bool _isDashAttacking;
     public bool hasDash = false;
+    private GhostTrail _ghostTrail;
 
     //Attack
     private float _attackStartTime;
@@ -117,6 +118,7 @@ public class HollowKnightMovement : MonoBehaviour
         AnimHandler = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         _impulseSource = GetComponent<CinemachineImpulseSource>();
+        _ghostTrail = GetComponent<GhostTrail>();
     }
 
     private void Start()
@@ -125,6 +127,7 @@ public class HollowKnightMovement : MonoBehaviour
         IsFacingRight = true;
         _airJumpsLeft = Data.airJumpsAmount;
         _dashesLeft = Data.dashAmount;
+
         
 
 
@@ -441,6 +444,7 @@ public class HollowKnightMovement : MonoBehaviour
         {
             IsWallSliding = false;
         }
+
         #endregion
 
         #region GRAVITY
@@ -721,6 +725,7 @@ public class HollowKnightMovement : MonoBehaviour
     #region DASH METHODS
     private IEnumerator StartDash(Vector2 dir)
     {
+        if (_ghostTrail != null) _ghostTrail.StartTrail();
         LastOnGroundTime = 0;
         LastPressedDashTime = 0;
 
@@ -763,6 +768,7 @@ public class HollowKnightMovement : MonoBehaviour
             _dashTrail.emitting = false;
 
         IsDashing = false;
+        if (_ghostTrail != null) _ghostTrail.StopTrail();
     }
 
     private IEnumerator RefillDash(int amount)

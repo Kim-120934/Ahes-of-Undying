@@ -1,34 +1,40 @@
 fileFormatVersion: 2
-guid: 075b88d53a5119a499263f93f4a6bf93
+guid: bf9b3410d5bb8694a923f02064849597
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5663790581525252060
-    second: skeleton die anim_0
+      213: -1425135646123831470
+    second: BOT_0
   - first:
-      213: -3287030847328338940
-    second: skeleton die anim_1
+      213: -8527679986192661055
+    second: BOT_1
   - first:
-      213: 7208378102815644461
-    second: skeleton die anim_2
+      213: 7778327964889951903
+    second: BOT_2
   - first:
-      213: -6945981279875800068
-    second: skeleton die anim_3
+      213: -2462495488239369799
+    second: BOT_3
   - first:
-      213: 916009151557152541
-    second: skeleton die anim_4
+      213: -8434796783010531744
+    second: BOT_4
   - first:
-      213: 2343507812472051861
-    second: skeleton die anim_5
+      213: 1907702229236335081
+    second: BOT_5
   - first:
-      213: 391907201923024311
-    second: skeleton die anim_6
+      213: -5969676853889825635
+    second: BOT_6
   - first:
-      213: -4064398532017446058
-    second: skeleton die anim_7
+      213: 5118096788609628151
+    second: BOT_7
   - first:
-      213: -6465656407048695865
-    second: skeleton die anim_8
+      213: -7881110190560289539
+    second: BOT_8
+  - first:
+      213: 8615895334901586665
+    second: BOT_9
+  - first:
+      213: -2127208456268043600
+    second: BOT_10
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -70,7 +76,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -124,13 +130,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: skeleton die anim_0
+      name: BOT_0
       rect:
         serializedVersion: 2
-        x: 478
-        y: 0
-        width: 63
-        height: 54
+        x: 0
+        y: 2
+        width: 9
+        height: 12
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -139,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd7040e9683d99e40800000000000000
-      internalID: 5663790581525252060
+      spriteID: 25fca083ea6e83ce0800000000000000
+      internalID: -1425135646123831470
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeleton die anim_1
+      name: BOT_1
       rect:
         serializedVersion: 2
-        x: 1519
+        x: 2
         y: 0
-        width: 63
-        height: 54
+        width: 13
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +167,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40c3e3b1cde1262d0800000000000000
-      internalID: -3287030847328338940
+      spriteID: 1c547c0fb3897a980800000000000000
+      internalID: -8527679986192661055
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeleton die anim_2
+      name: BOT_2
       rect:
         serializedVersion: 2
-        x: 2560
-        y: 0
-        width: 63
-        height: 54
+        x: 6
+        y: 3
+        width: 7
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -183,20 +189,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2bd70161bd490460800000000000000
-      internalID: 7208378102815644461
+      spriteID: f9ea0cd921c22fb60800000000000000
+      internalID: 7778327964889951903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeleton die anim_3
+      name: BOT_3
       rect:
         serializedVersion: 2
-        x: 3602
-        y: 0
-        width: 63
-        height: 52
+        x: 10
+        y: 5
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,20 +211,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cf36d7cc3daea9f90800000000000000
-      internalID: -6945981279875800068
+      spriteID: 9b18d7a766573ddd0800000000000000
+      internalID: -2462495488239369799
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeleton die anim_4
+      name: BOT_4
       rect:
         serializedVersion: 2
-        x: 4642
-        y: 0
-        width: 63
-        height: 49
+        x: 14
+        y: 3
+        width: 6
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +233,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1f2299587156bc00800000000000000
-      internalID: 916009151557152541
+      spriteID: 066bc0ce30591fa80800000000000000
+      internalID: -8434796783010531744
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeleton die anim_5
+      name: BOT_5
       rect:
         serializedVersion: 2
-        x: 5683
+        x: 15
         y: 0
-        width: 63
-        height: 40
+        width: 28
+        height: 15
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -249,20 +255,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 598dfb260ffc58020800000000000000
-      internalID: 2343507812472051861
+      spriteID: 9e14adee115897a10800000000000000
+      internalID: 1907702229236335081
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeleton die anim_6
+      name: BOT_6
       rect:
         serializedVersion: 2
-        x: 6724
-        y: 0
-        width: 71
-        height: 29
+        x: 38
+        y: 3
+        width: 6
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +277,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b50a831685507500800000000000000
-      internalID: 391907201923024311
+      spriteID: d948604b782772da0800000000000000
+      internalID: -5969676853889825635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeleton die anim_7
+      name: BOT_7
       rect:
         serializedVersion: 2
-        x: 7765
-        y: 0
-        width: 73
-        height: 20
+        x: 41
+        y: 5
+        width: 7
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -293,20 +299,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6532b79b11b5897c0800000000000000
-      internalID: -4064398532017446058
+      spriteID: 7f7f42399e1270740800000000000000
+      internalID: 5118096788609628151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: skeleton die anim_8
+      name: BOT_8
       rect:
         serializedVersion: 2
-        x: 8806
+        x: 43
         y: 0
-        width: 73
-        height: 20
+        width: 13
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -315,8 +321,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7cf422a11cf5546a0800000000000000
-      internalID: -6465656407048695865
+      spriteID: dfc51ff990ca0a290800000000000000
+      internalID: -7881110190560289539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOT_9
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 3
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ea11ca782fc19770800000000000000
+      internalID: 8615895334901586665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BOT_10
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 2
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0baafe0fd23aa72e0800000000000000
+      internalID: -2127208456268043600
       vertices: []
       indices: 
       edges: []
@@ -325,7 +375,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -335,15 +385,17 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      skeleton die anim_0: 5663790581525252060
-      skeleton die anim_1: -3287030847328338940
-      skeleton die anim_2: 7208378102815644461
-      skeleton die anim_3: -6945981279875800068
-      skeleton die anim_4: 916009151557152541
-      skeleton die anim_5: 2343507812472051861
-      skeleton die anim_6: 391907201923024311
-      skeleton die anim_7: -4064398532017446058
-      skeleton die anim_8: -6465656407048695865
+      BOT_0: -1425135646123831470
+      BOT_1: -8527679986192661055
+      BOT_10: -2127208456268043600
+      BOT_2: 7778327964889951903
+      BOT_3: -2462495488239369799
+      BOT_4: -8434796783010531744
+      BOT_5: 1907702229236335081
+      BOT_6: -5969676853889825635
+      BOT_7: 5118096788609628151
+      BOT_8: -7881110190560289539
+      BOT_9: 8615895334901586665
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
