@@ -1,0 +1,813 @@
+fileFormatVersion: 2
+guid: 5bf8594c16ee24f4d857d2a51e45b8da
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6664097064957563676
+    second: beam boss thorn1_0
+  - first:
+      213: -5453668426066275842
+    second: beam boss thorn1_1
+  - first:
+      213: -4345489501517934791
+    second: beam boss thorn1_2
+  - first:
+      213: -7143567352021352750
+    second: beam boss thorn1_3
+  - first:
+      213: 4112850435577332160
+    second: beam boss thorn1_4
+  - first:
+      213: 4774395825181444306
+    second: beam boss thorn1_5
+  - first:
+      213: 6052644855269303608
+    second: beam boss thorn1_6
+  - first:
+      213: 6824585805847769828
+    second: beam boss thorn1_7
+  - first:
+      213: -1362420626812523638
+    second: beam boss thorn1_8
+  - first:
+      213: 299517620020228719
+    second: beam boss thorn1_9
+  - first:
+      213: 252420293510998248
+    second: beam boss thorn1_10
+  - first:
+      213: 7461529293997873876
+    second: beam boss thorn1_11
+  - first:
+      213: -7428832441540101514
+    second: beam boss thorn1_12
+  - first:
+      213: 2281243458109417774
+    second: beam boss thorn1_13
+  - first:
+      213: 9194963566738300360
+    second: beam boss thorn1_14
+  - first:
+      213: 2263702915764295702
+    second: beam boss thorn1_15
+  - first:
+      213: -4090492560394612939
+    second: beam boss thorn1_16
+  - first:
+      213: -3153283346688120094
+    second: beam boss thorn1_17
+  - first:
+      213: 3651596245309494301
+    second: beam boss thorn1_18
+  - first:
+      213: 1803330123683155031
+    second: beam boss thorn1_19
+  - first:
+      213: 4098239765904741011
+    second: beam boss thorn1_20
+  - first:
+      213: 7130137220573620934
+    second: beam boss thorn1_21
+  - first:
+      213: 1109094994448079273
+    second: beam boss thorn1_22
+  - first:
+      213: 4429340146808330016
+    second: beam boss thorn1_23
+  - first:
+      213: 4196062584493466520
+    second: beam boss thorn1_24
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: beam boss thorn1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13d48109f0ab7c50800000000000000
+      internalID: 6664097064957563676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_1
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef15e85167da054b0800000000000000
+      internalID: -5453668426066275842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_2
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93f85de5258b1b3c0800000000000000
+      internalID: -4345489501517934791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_3
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2de70b17753fcdc90800000000000000
+      internalID: -7143567352021352750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_4
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c1c5ea2ea7c31930800000000000000
+      internalID: 4112850435577332160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_5
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d84c0905bf024240800000000000000
+      internalID: 4774395825181444306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_6
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8352ce57d605ff350800000000000000
+      internalID: 6052644855269303608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_7
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e2bab8d1acc5be50800000000000000
+      internalID: 6824585805847769828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_8
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8bac2888a5b71de0800000000000000
+      internalID: -1362420626812523638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_9
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f62b64140b9182400800000000000000
+      internalID: 299517620020228719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_10
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e8a2d86be6c08300800000000000000
+      internalID: 252420293510998248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_11
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4da1ae92c5dac8760800000000000000
+      internalID: 7461529293997873876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_12
+      rect:
+        serializedVersion: 2
+        x: 1764
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67aba1a014c77e890800000000000000
+      internalID: -7428832441540101514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_13
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29abcea6da98af10800000000000000
+      internalID: 2281243458109417774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_14
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8cd581e95a21b9f70800000000000000
+      internalID: 9194963566738300360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_15
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 618952beec94a6f10800000000000000
+      internalID: 2263702915764295702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_16
+      rect:
+        serializedVersion: 2
+        x: 2793
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f0d4d40b6ab37c0800000000000000
+      internalID: -4090492560394612939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_17
+      rect:
+        serializedVersion: 2
+        x: 2940
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eaef74c0894d34d0800000000000000
+      internalID: -3153283346688120094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_18
+      rect:
+        serializedVersion: 2
+        x: 3087
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1492d820731da230800000000000000
+      internalID: 3651596245309494301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_19
+      rect:
+        serializedVersion: 2
+        x: 3234
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75c45ea6137b60910800000000000000
+      internalID: 1803330123683155031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_20
+      rect:
+        serializedVersion: 2
+        x: 3381
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392d12b8a5fdfd830800000000000000
+      internalID: 4098239765904741011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_21
+      rect:
+        serializedVersion: 2
+        x: 3528
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cae418660653f260800000000000000
+      internalID: 7130137220573620934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_22
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9dd3e650c446f00800000000000000
+      internalID: 1109094994448079273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_23
+      rect:
+        serializedVersion: 2
+        x: 3822
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02713e7556d287d30800000000000000
+      internalID: 4429340146808330016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_24
+      rect:
+        serializedVersion: 2
+        x: 3969
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8936a0c50b86b3a30800000000000000
+      internalID: 4196062584493466520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_25
+      rect:
+        serializedVersion: 2
+        x: 4116
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 448757e96dc231b418877488a61b5216
+      internalID: -1128424299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: beam boss thorn1_26
+      rect:
+        serializedVersion: 2
+        x: 4263
+        y: 0
+        width: 147
+        height: 1247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76819778321e6244798802fc37b27c61
+      internalID: -1910219120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 59be25bc32b78274e87738e7166cee17
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      beam boss thorn1_0: 6664097064957563676
+      beam boss thorn1_1: -5453668426066275842
+      beam boss thorn1_10: 252420293510998248
+      beam boss thorn1_11: 7461529293997873876
+      beam boss thorn1_12: -7428832441540101514
+      beam boss thorn1_13: 2281243458109417774
+      beam boss thorn1_14: 9194963566738300360
+      beam boss thorn1_15: 2263702915764295702
+      beam boss thorn1_16: -4090492560394612939
+      beam boss thorn1_17: -3153283346688120094
+      beam boss thorn1_18: 3651596245309494301
+      beam boss thorn1_19: 1803330123683155031
+      beam boss thorn1_2: -4345489501517934791
+      beam boss thorn1_20: 4098239765904741011
+      beam boss thorn1_21: 7130137220573620934
+      beam boss thorn1_22: 1109094994448079273
+      beam boss thorn1_23: 4429340146808330016
+      beam boss thorn1_24: 4196062584493466520
+      beam boss thorn1_25: -1128424299
+      beam boss thorn1_26: -1910219120
+      beam boss thorn1_3: -7143567352021352750
+      beam boss thorn1_4: 4112850435577332160
+      beam boss thorn1_5: 4774395825181444306
+      beam boss thorn1_6: 6052644855269303608
+      beam boss thorn1_7: 6824585805847769828
+      beam boss thorn1_8: -1362420626812523638
+      beam boss thorn1_9: 299517620020228719
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

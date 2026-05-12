@@ -31,8 +31,7 @@ public class SaveManager : MonoBehaviour
 
     public void SaveGame(int slot)
     {
-        Debug.Log("Guardando en: " + GetSavePath(slot));
-        Debug.Log("Nombre pendiente: " + _pendingName);
+        
         HollowKnightMovement player = FindFirstObjectByType<HollowKnightMovement>();
         if (player == null) return;
         
@@ -69,7 +68,10 @@ public class SaveManager : MonoBehaviour
             (existingData?.dasherDefeated ?? false);
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(GetSavePath(slot), json);
-        Debug.Log("Partida guardada en slot " + slot);
+       
+        data.bossDefeated = BossPersistence.instance != null ?
+         BossPersistence.instance.IsDefeated :
+         (existingData?.bossDefeated ?? false);
     }
 
     public SaveData LoadGame(int slot)

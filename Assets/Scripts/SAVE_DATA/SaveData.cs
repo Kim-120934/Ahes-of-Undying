@@ -17,4 +17,5 @@ public class SaveData
     public bool hasDash;
     public bool dasherDefeated;
     public string[] destroyedWalls = new string[0];
+    public bool bossDefeated;
 }

@@ -32,6 +32,7 @@ public class EnemyHealth : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         _absorbable = GetComponent<AbsorbableEnemy>();
         _hitEffect = GetComponent<HitEffect>();
+        
     }
 
     private void Start()
@@ -124,7 +125,7 @@ public class EnemyHealth : MonoBehaviour
             if (coinPrefab != null)
                 Instantiate(coinPrefab, transform.position, Quaternion.identity);
         }
-
+        GetComponent<BossController>()?.OnDeath();
         Destroy(gameObject);
     }
 }

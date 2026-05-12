@@ -23,6 +23,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ASKE_Scenes/Sala_S2.unity
     guid: 993f982c08c91eb4bbae6be0269f8a1f
+  - enabled: 1
+    path: Assets/Scenes/ASKE_Scenes/Sala_5.unity
+    guid: 1afdf0ad91724f54b90f482f02cee879
+  - enabled: 1
+    path: Assets/Scenes/ASKE_Scenes/Credits.unity
+    guid: f8e454d597766694eb6e1f83beafc84e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

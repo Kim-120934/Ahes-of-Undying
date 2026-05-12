@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: 34f67e3b42dae214fb587a84352b6563
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4033095766906626274
+    second: thorn_boss_attack2_0
+  - first:
+      213: -3396813465892904732
+    second: thorn_boss_attack2_1
+  - first:
+      213: -351320197349683259
+    second: thorn_boss_attack2_2
+  - first:
+      213: -1073909839502996335
+    second: thorn_boss_attack2_3
+  - first:
+      213: -5072229174749075634
+    second: thorn_boss_attack2_4
+  - first:
+      213: 2141615719679988435
+    second: thorn_boss_attack2_5
+  - first:
+      213: -847007909390920932
+    second: thorn_boss_attack2_6
+  - first:
+      213: 1855489456799233925
+    second: thorn_boss_attack2_7
+  - first:
+      213: -2446371378024757515
+    second: thorn_boss_attack2_8
+  - first:
+      213: -3044941235550095703
+    second: thorn_boss_attack2_9
+  - first:
+      213: 2321147693695790205
+    second: thorn_boss_attack2_10
+  - first:
+      213: 3657235667791010473
+    second: thorn_boss_attack2_11
+  - first:
+      213: 6699622800126886997
+    second: thorn_boss_attack2_12
+  - first:
+      213: -6553334264882039477
+    second: thorn_boss_attack2_13
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: thorn_boss_attack2_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 783
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e0e9935b3f68f730800000000000000
+      internalID: 4033095766906626274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_1
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 783
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e0a03d56281cd0d0800000000000000
+      internalID: -3396813465892904732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_2
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 783
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf4d82542cdf1bf0800000000000000
+      internalID: -351320197349683259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_3
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 783
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19c80a7d0b4b811f0800000000000000
+      internalID: -1073909839502996335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 522
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4765bb7072db99b0800000000000000
+      internalID: -5072229174749075634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_5
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 522
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d21be8762c88bd10800000000000000
+      internalID: 2141615719679988435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_6
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 522
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13dec64bc2de34f0800000000000000
+      internalID: -847007909390920932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 522
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587300584d500c910800000000000000
+      internalID: 1855489456799233925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 261
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f6c620713ebc0ed0800000000000000
+      internalID: -2446371378024757515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_9
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 261
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a6f81d34123eb5d0800000000000000
+      internalID: -3044941235550095703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 261
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7c64f9878f563020800000000000000
+      internalID: 2321147693695790205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_11
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 261
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aa5296867c11c230800000000000000
+      internalID: 3657235667791010473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554cbaac077d9fc50800000000000000
+      internalID: 6699622800126886997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thorn_boss_attack2_13
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 0
+        width: 153
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b457f470531ed05a0800000000000000
+      internalID: -6553334264882039477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a52d03f3971be524eb4dc3c179906358
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      thorn_boss_attack2_0: 4033095766906626274
+      thorn_boss_attack2_1: -3396813465892904732
+      thorn_boss_attack2_10: 2321147693695790205
+      thorn_boss_attack2_11: 3657235667791010473
+      thorn_boss_attack2_12: 6699622800126886997
+      thorn_boss_attack2_13: -6553334264882039477
+      thorn_boss_attack2_2: -351320197349683259
+      thorn_boss_attack2_3: -1073909839502996335
+      thorn_boss_attack2_4: -5072229174749075634
+      thorn_boss_attack2_5: 2141615719679988435
+      thorn_boss_attack2_6: -847007909390920932
+      thorn_boss_attack2_7: 1855489456799233925
+      thorn_boss_attack2_8: -2446371378024757515
+      thorn_boss_attack2_9: -3044941235550095703
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

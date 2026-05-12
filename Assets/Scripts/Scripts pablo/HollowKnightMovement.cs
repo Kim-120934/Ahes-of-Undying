@@ -290,26 +290,10 @@ public class HollowKnightMovement : MonoBehaviour
         {
             OnInteractInput();
         }
-        // Volver al menu (Escape)
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Time.timeScale = 1f;
-            
-            
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-        }
-        // TESTING - Recibir daño (TEMPORAL)  - Presiona H para simular daño desde la izquierda
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            TakeDamage(1, transform.position + Vector3.left);
-            Debug.Log("TEST: Daño recibido desde la izquierda");
-        }
-        
-        // TESTING - Curar (TEMPORAL) - Presiona G para curar 1 punto de vida
         if (Input.GetKeyDown(KeyCode.G))
         {
             Heal(1);
-            Debug.Log("TEST: Curado");
+            
         }
         bool grounded = LastOnGroundTime > 0;
         bool falling = _isJumpFalling && !IsJumping && RB.linearVelocity.y < 0 && !grounded;
