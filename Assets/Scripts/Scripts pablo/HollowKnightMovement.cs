@@ -1,6 +1,7 @@
 using System.Collections;
-using UnityEngine;
 using Unity.Cinemachine;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HollowKnightMovement : MonoBehaviour
 {
@@ -1008,17 +1009,29 @@ public class HollowKnightMovement : MonoBehaviour
     public void LoseLife()
     {
         currentLives--;
-
-        Debug.Log("Pierdes una vida. Vidas restantes: " + currentLives);
-
         if (currentLives <= 0)
         {
             GameOver();
         }
         else
         {
-            currentHits = maxHitsPerLife; // RESET DE BARRA
-            Respawn();
+            currentHits = maxHitsPerLife;
+
+            string currentScene = SceneManager.GetActiveScene().name;
+            string safeScene = SaveManager.instance?.lastSafeScene;
+
+            if (!string.IsNullOrEmpty(safeScene) && safeScene != currentScene)
+            {
+                SaveManager.instance.nextSpawnID = SaveManager.instance.lastSpawnID;
+                if (SceneTransition.instance != null)
+                    SceneTransition.instance.LoadScene(safeScene);
+                else
+                    SceneManager.LoadScene(safeScene);
+            }
+            else
+            {
+                Respawn();
+            }
         }
     }
     private void GameOver()

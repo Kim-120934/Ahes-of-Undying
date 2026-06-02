@@ -84,7 +84,7 @@ public class SlotMenu : MonoBehaviour
             UpdateSlotLabels();
             _deleteMode = false;
             if (deleteButton != null)
-                deleteButton.GetComponentInChildren<TextMeshProUGUI>().text = "Borrar Partida";
+                deleteButton.GetComponentInChildren<TextMeshProUGUI>().text = "Delete Game";
             return;
         }
 

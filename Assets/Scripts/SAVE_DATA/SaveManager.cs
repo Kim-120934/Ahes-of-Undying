@@ -6,6 +6,8 @@ public class SaveManager : MonoBehaviour
     public static SaveManager instance;
     private string _pendingName = "Jugador";
     public string nextSpawnID;
+    public string lastSafeScene = "";  
+    public string lastSpawnID = "";
 
     public void SetPendingName(string name)
     {

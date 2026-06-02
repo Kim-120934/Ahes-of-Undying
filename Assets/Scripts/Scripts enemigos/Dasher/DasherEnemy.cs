@@ -27,6 +27,7 @@ public class DasherEnemy : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private TrailRenderer dashTrail;
     [SerializeField] private LayerMask playerLayer;
+    private GhostTrail _ghostTrail;
 
     private enum State { Idle, Walk, Telegraph, Dash, Attack, Retreat, HitStun }
     private State _state = State.Idle;
@@ -45,6 +46,7 @@ public class DasherEnemy : MonoBehaviour
         _enemyHealth = GetComponent<EnemyHealth>();
         _anim = GetComponent<Animator>();
         _sr = GetComponent<SpriteRenderer>();
+        _ghostTrail = GetComponent<GhostTrail>();
     }
 
     private void Start()
@@ -107,6 +109,7 @@ public class DasherEnemy : MonoBehaviour
         FaceDirection(dashDir > 0);
 
         if (dashTrail != null) dashTrail.emitting = true;
+        if (_ghostTrail != null) _ghostTrail.StartTrail();
         if (_anim != null) _anim.SetTrigger("Dash");
 
         float dashTimer = 0f;
@@ -118,6 +121,7 @@ public class DasherEnemy : MonoBehaviour
         }
 
         if (dashTrail != null) dashTrail.emitting = false;
+        if (_ghostTrail != null) _ghostTrail.StopTrail();
         _rb.linearVelocity = Vector2.zero;
 
         // Ventana de hitstun donde el jugador puede contraatacar
