@@ -807,7 +807,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 559393377}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hoverColor: {r: 0.4745098, g: 0.4745098, b: 0.4745098, a: 1}
 --- !u!114 &1341498536 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6847104945948078547, guid: 6e15618f883ed2b4fab4471c5d4dfccd, type: 3}
@@ -1047,7 +1047,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buttonText: {fileID: 1115781502}
   normalColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hoverColor: {r: 0.4745098, g: 0.4745098, b: 0.4745098, a: 1}
 --- !u!1 &1685517403 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2087717147832893621, guid: 6e15618f883ed2b4fab4471c5d4dfccd, type: 3}
