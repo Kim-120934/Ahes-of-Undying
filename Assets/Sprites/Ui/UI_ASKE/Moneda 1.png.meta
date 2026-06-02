@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 612b98dbd0a424b44a68162030cdffec
+guid: 07e9470a458a8e14f9912ffa3980238a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6184050716912831369
-    second: 00_0
+      213: -1344650980532762665
+    second: Moneda 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 00_0
+      name: Moneda 1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 65
-        height: 64
+        x: 112
+        y: 11
+        width: 11
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 774396133a6dd2aa0800000000000000
-      internalID: -6184050716912831369
+      spriteID: 7d7c676be07d65de0800000000000000
+      internalID: -1344650980532762665
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      00_0: -6184050716912831369
+      Moneda 1_0: -1344650980532762665
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

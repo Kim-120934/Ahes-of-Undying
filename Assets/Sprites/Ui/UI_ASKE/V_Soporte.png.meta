@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 82d439fb0e13245409fb63a11877e467
+guid: 46ff893245c826e4899e3d1449160b8b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5584226628102989118
-    second: Vida vacia_0
+      213: 815079992277025521
+    second: V_Soporte_0
+  - first:
+      213: -6982808397377043279
+    second: V_Soporte_1
+  - first:
+      213: 329328383350397933
+    second: V_Soporte_2
+  - first:
+      213: 9011199692623972761
+    second: V_Soporte_3
+  - first:
+      213: 5331147213471108019
+    second: V_Soporte_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +87,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vida vacia_0
+      name: V_Soporte_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 12
-        height: 20
+        x: 66
+        y: 33
+        width: 20
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e352b5128882f7d40800000000000000
-      internalID: 5584226628102989118
+      spriteID: 1f2433b3feebf4b00800000000000000
+      internalID: 815079992277025521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: V_Soporte_1
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 41
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b40ab352c4181f90800000000000000
+      internalID: -6982808397377043279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: V_Soporte_2
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 41
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: debdd087b62029400800000000000000
+      internalID: 329328383350397933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: V_Soporte_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 41
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99906f680663e0d70800000000000000
+      internalID: 9011199692623972761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: V_Soporte_4
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 36
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb4240252a0cf940800000000000000
+      internalID: 5331147213471108019
       vertices: []
       indices: 
       edges: []
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Vida vacia_0: 5584226628102989118
+      V_Soporte_0: 815079992277025521
+      V_Soporte_1: -6982808397377043279
+      V_Soporte_2: 329328383350397933
+      V_Soporte_3: 9011199692623972761
+      V_Soporte_4: 5331147213471108019
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

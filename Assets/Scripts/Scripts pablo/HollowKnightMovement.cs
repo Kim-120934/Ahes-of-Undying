@@ -49,6 +49,7 @@ public class HollowKnightMovement : MonoBehaviour
     private GhostTrail _ghostTrail;
 
     //Attack
+    private COMBO _combo;
     private float _attackStartTime;
     private Vector2 _attackDirection;
     private int _comboCount = 0;
@@ -57,7 +58,6 @@ public class HollowKnightMovement : MonoBehaviour
     private bool _isHealing = false;
     private float _lastAttackEndTime = 0f;
     [SerializeField] private float _attackCooldown = 0.15f;
-
 
     //Health
     [Header("Lives System")]
@@ -119,6 +119,7 @@ public class HollowKnightMovement : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         _impulseSource = GetComponent<CinemachineImpulseSource>();
         _ghostTrail = GetComponent<GhostTrail>();
+        _combo = GetComponent<COMBO>();
     }
 
     private void Start()
@@ -479,7 +480,7 @@ public class HollowKnightMovement : MonoBehaviour
     private void FixedUpdate()
     {
         // Handle Run
-        if (!IsDashing)
+        if (!IsDashing && !_isKnockedBack)
         {
             Run(1);
         }
@@ -522,9 +523,10 @@ public class HollowKnightMovement : MonoBehaviour
 
     public void OnAttackInput()
     {
-        LastPressedAttackTime = Data.attackInputBufferTime;
-        // Attack logic can be added here
+        if (_combo != null)
+            _combo.TryAttack();
     }
+
     #endregion
 
     #region GENERAL METHODS
@@ -671,6 +673,11 @@ public class HollowKnightMovement : MonoBehaviour
             _isGrounded = true;
             if (RB.linearVelocity.y < -0.1f)
                 SpawnEffect(_landEffectPrefab);
+
+            // Resetear ataque aéreo al aterrizar
+            COMBO combo = GetComponent<COMBO>();
+            if (combo != null)
+                combo.AnimEndAir();
         }
     }
     private void WallJump(int dir)
@@ -891,18 +898,14 @@ public class HollowKnightMovement : MonoBehaviour
 
     private IEnumerator PerformAttack()
     {
-        
         _animator.SetBool("isAttacking", true);
         LastPressedAttackTime = 0;
 
-        // Combo
         if (Time.time - _lastAttackTime > _comboWindow)
             _comboCount = 0;
 
-        // Solo avanzar combo si el golpe anterior conectó
         _lastAttackTime = Time.time;
 
-        // Animación según combo
         _animator.SetTrigger("Attack" + (_comboCount + 1));
 
         if (_attackDirection == Vector2.down && !IsGrounded())
@@ -914,7 +917,6 @@ public class HollowKnightMovement : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         PlaySFXSafe(AudioManager.instance?.attackSFX);
         DetectAndHitEnemies();
-       
 
         float remainingDuration = Data.attackDuration - 0.1f;
         yield return new WaitForSeconds(remainingDuration);
@@ -922,28 +924,23 @@ public class HollowKnightMovement : MonoBehaviour
         IsAttacking = false;
         _animator.SetBool("isAttacking", false);
     }
-    
-    private void DetectAndHitEnemies()
-{
-        // Calcular posición del hitbox según dirección del ataque
-        Vector2 attackPosition = (Vector2)transform.position + (_attackDirection * Data.attackRange);
-    
-    // Detectar todos los colliders en el área de ataque
-    Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(
-        attackPosition, 
-        Data.attackHitboxSize, 
-        0f, 
-        Data.enemyLayer  // Necesitamos añadir esto al Data
-    );
-    
-    // Aplicar daño a cada enemigo golpeado
-    foreach (Collider2D enemy in hitEnemies)
+    public void DetectAndHitEnemies()
     {
-        // Intentar obtener el componente de salud del enemigo
-        EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
-        
-        if (enemyHealth != null)
+        Vector2 attackPosition = (Vector2)transform.position + (_attackDirection * Data.attackRange);
+
+        Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(
+            attackPosition,
+            Data.attackHitboxSize,
+            0f,
+            Data.enemyLayer
+        );
+
+        foreach (Collider2D enemy in hitEnemies)
         {
+            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+
+            if (enemyHealth != null)
+            {
                 if (hitSplatPrefab != null)
                     Instantiate(hitSplatPrefab, enemy.transform.position, Quaternion.identity);
                 if (_impulseSource != null)
@@ -953,29 +950,22 @@ public class HollowKnightMovement : MonoBehaviour
                 _comboCount++;
                 if (_comboCount > 3) _comboCount = 1;
                 _lastAttackTime = Time.time;
-                // Calcular dirección del knockback (desde el jugador hacia el enemigo)
+
                 Vector2 knockbackDirection = (enemy.transform.position - transform.position).normalized;
-            
-            // Aplicar daño al enemigo
-            enemyHealth.TakeDamage(Data.attackDamage, knockbackDirection);
-            
-            Debug.Log($"¡Golpeaste a {enemy.name}!");
-            
-            // Pogo extra si golpeaste hacia abajo en el aire
-            if (_attackDirection == Vector2.down && !IsGrounded())
-            {
-                // Impulso extra al golpear enemigo (pogo mejorado)
-                RB.linearVelocity = new Vector2(RB.linearVelocity.x, 0f);
-                RB.AddForce(Vector2.up * Data.jumpForce * 0.7f, ForceMode2D.Impulse);
-                Debug.Log("¡POGO MEJORADO por golpear enemigo!");
+                enemyHealth.TakeDamage(Data.attackDamage, knockbackDirection);
+
+                if (_attackDirection == Vector2.down && !IsGrounded())
+                {
+                    RB.linearVelocity = new Vector2(RB.linearVelocity.x, 0f);
+                    RB.AddForce(Vector2.up * Data.jumpForce * 0.7f, ForceMode2D.Impulse);
+                }
             }
-        }
+
             BreakableChest chest = enemy.GetComponent<BreakableChest>();
             if (chest != null)
                 chest.TakeDamage();
         }
-}
-
+    }
     private string GetAttackDirectionString()
     {
         if (_attackDirection == Vector2.up) return "Up";
@@ -984,7 +974,7 @@ public class HollowKnightMovement : MonoBehaviour
         return "Left";
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return LastOnGroundTime > 0;
     }
@@ -993,16 +983,19 @@ public class HollowKnightMovement : MonoBehaviour
     #region HEALTH METHODS 
     public void TakeDamage(int damage, Vector2 damageSourcePosition)
     {
-        if (IsInvulnerable)
-            return;
+        if (IsInvulnerable) return;
 
         currentHits -= damage;
-
-        Debug.Log($"Hit recibido. Hits restantes: {currentHits}");
-
         IsInvulnerable = true;
-        PlaySFXSafe(AudioManager.instance?.takeDamageSFX);
         _invulnerabilityTimer = Data.invulnerabilityDuration;
+        PlaySFXSafe(AudioManager.instance?.takeDamageSFX);
+
+        // Resetear combo al recibir daño
+        COMBO combo = GetComponent<COMBO>();
+        if (combo != null)
+            combo.ResetCombo();
+
+        _animator.SetTrigger("TakeDamage");
 
         ApplyKnockback(damageSourcePosition);
 
@@ -1010,6 +1003,7 @@ public class HollowKnightMovement : MonoBehaviour
         {
             LoseLife();
         }
+           
     }
     public void LoseLife()
     {
@@ -1037,25 +1031,24 @@ public class HollowKnightMovement : MonoBehaviour
         transform.position = Vector3.zero;
         RB.linearVelocity = Vector2.zero;
     }
+    private bool _isKnockedBack = false;
+
     private void ApplyKnockback(Vector2 damageSourcePosition)
     {
-        // Calcular dirección del knockback (alejarse de la fuente de daño)
-        Vector2 knockbackDirection = ((Vector2)transform.position - damageSourcePosition).normalized;
-        
-        // Cancelar velocidad actual
+        float knockbackDir = (transform.position.x > damageSourcePosition.x) ? 1f : -1f;
+
         RB.linearVelocity = Vector2.zero;
-        
-        // Aplicar fuerza de knockback
-        Vector2 knockbackForce = new Vector2(
-            knockbackDirection.x * Data.knockbackForce.x,
-            Data.knockbackForce.y  // Siempre empuja hacia arriba
-        );
-        
-        RB.AddForce(knockbackForce, ForceMode2D.Impulse);
-        
-        Debug.Log($"Knockback aplicado: {knockbackForce}");
+        RB.AddForce(new Vector2(knockbackDir * 15f, 0f), ForceMode2D.Impulse);
+
+        StartCoroutine(KnockbackLock(0.2f));
     }
 
+    private IEnumerator KnockbackLock(float duration)
+    {
+        _isKnockedBack = true;
+        yield return new WaitForSeconds(duration);
+        _isKnockedBack = false;
+    }
     public void Heal(int amount)
     {
         if (currentSoul <= 0) return;

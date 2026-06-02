@@ -56,11 +56,11 @@ MonoBehaviour:
   heartEmpty: {fileID: 21300000, guid: 82d439fb0e13245409fb63a11877e467, type: 3}
   soulFlask: {fileID: 0}
   soulSprites:
-  - {fileID: 21300000, guid: 612b98dbd0a424b44a68162030cdffec, type: 3}
-  - {fileID: 21300000, guid: 43f7e05e0e7fc2b4cad123f1c63f5435, type: 3}
-  - {fileID: 21300000, guid: 4f0936eb2e1403b46b01ba7f8b46b1a7, type: 3}
-  - {fileID: 21300000, guid: 469e4079e7f0bec4fbe342c79fb1e52c, type: 3}
-  - {fileID: 21300000, guid: ffe8f5d60e737574fbbb83824a7de95a, type: 3}
+  - {fileID: 21300000, guid: 8849a1be1e55cd443a3b916ab509919e, type: 3}
+  - {fileID: 21300000, guid: 11420de42d3fb8046810aa327a9ea6a2, type: 3}
+  - {fileID: 21300000, guid: fb86a2b81a14d154387ae470f51d7935, type: 3}
+  - {fileID: 21300000, guid: f41460664cf290c46a3870bd68824c74, type: 3}
+  - {fileID: 21300000, guid: 0543f9f2f5597234aa025ebe6c5aa686, type: 3}
 --- !u!114 &4164292226140141694
 MonoBehaviour:
   m_ObjectHideFlags: 0

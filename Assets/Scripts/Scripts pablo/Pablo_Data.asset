@@ -56,8 +56,8 @@ MonoBehaviour:
   attackDuration: 0.3
   attackDamage: 1
   attackKnockback: 5
-  attackHitboxSize: {x: 1.5, y: 1}
-  attackRange: 1
+  attackHitboxSize: {x: 5, y: 4}
+  attackRange: 4
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128

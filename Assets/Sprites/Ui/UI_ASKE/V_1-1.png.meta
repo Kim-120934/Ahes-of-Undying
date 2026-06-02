@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a86079bb14f22324d9c6d57965701bf4
+guid: 87e14e2b88e290c44af687633d499e03
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6667002512045994807
-    second: Vida llena_0
+      213: -7115499986491589390
+    second: V_1-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vida llena_0
+      name: V_1-1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 12
-        height: 20
+        x: 83
+        y: 33
+        width: 14
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9cc8cd0e98c0a73a0800000000000000
-      internalID: -6667002512045994807
+      spriteID: 2fc3fd9367aa04d90800000000000000
+      internalID: -7115499986491589390
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Vida llena_0: -6667002512045994807
+      V_1-1_0: -7115499986491589390
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
