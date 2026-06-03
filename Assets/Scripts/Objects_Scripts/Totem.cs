@@ -1,7 +1,5 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
-using System.Collections.Generic;
 
 public class Totem : MonoBehaviour
 {
@@ -10,10 +8,7 @@ public class Totem : MonoBehaviour
     [SerializeField] private float fadeDuration = 0.3f;
 
     [Header("Fast Travel")]
-    [SerializeField] private GameObject travelPanel;         // Panel separado dentro del savePanel
-    [SerializeField] private Transform travelButtonContainer; // El layout donde se crean los botones
-    [SerializeField] private GameObject travelButtonPrefab;  // Prefab de botón con un Text/TextMeshPro
-    [SerializeField] private List<TotemDestination> destinations; // Los destinos configurados en Inspector
+    [SerializeField] private GameObject travelPanel;
 
     private CanvasGroup _canvasGroup;
     private bool _playerInRange = false;
@@ -52,14 +47,13 @@ public class Totem : MonoBehaviour
             else OpenPanel();
         }
 
-        // Abrir/cerrar mapa de viaje solo si el panel del totem está abierto
         if (_panelOpen && Input.GetKeyDown(KeyCode.M))
         {
             if (_travelPanelOpen) CloseTravelPanel();
             else OpenTravelPanel();
         }
 
-        if (_panelOpen && Input.GetKeyDown(KeyCode.Escape))
+        if (_panelOpen && Input.GetKeyDown(KeyCode.E))
         {
             if (_travelPanelOpen)
                 CloseTravelPanel();
@@ -102,48 +96,13 @@ public class Totem : MonoBehaviour
     private void OpenTravelPanel()
     {
         _travelPanelOpen = true;
-        travelPanel.SetActive(true);
-
-        // Limpiar botones anteriores
-        foreach (Transform child in travelButtonContainer)
-            Destroy(child.gameObject);
-
-        // Crear un botón por destino
-        foreach (TotemDestination dest in destinations)
-        {
-            GameObject btn = Instantiate(travelButtonPrefab, travelButtonContainer);
-            // Soporte para Text y TextMeshPro
-            var txt = btn.GetComponentInChildren<Text>();
-            if (txt != null) txt.text = dest.zoneName;
-            var tmpTxt = btn.GetComponentInChildren<TMPro.TextMeshProUGUI>();
-            if (tmpTxt != null) tmpTxt.text = dest.zoneName;
-
-            TotemDestination captured = dest; // capturar para el lambda
-            btn.GetComponentInChildren<Button>().onClick.AddListener(() => TravelTo(captured));
-        }
+        if (travelPanel != null) travelPanel.SetActive(true);
     }
 
     private void CloseTravelPanel()
     {
         _travelPanelOpen = false;
         if (travelPanel != null) travelPanel.SetActive(false);
-    }
-
-    private void TravelTo(TotemDestination dest)
-    {
-        if (SaveManager.instance != null)
-        {
-            SaveManager.instance.nextSpawnID = dest.spawnID;
-            SaveManager.instance.lastSafeScene = dest.sceneName;
-            SaveManager.instance.lastSpawnID = dest.spawnID;
-        }
-
-        Time.timeScale = 1f;
-
-        if (SceneTransition.instance != null)
-            SceneTransition.instance.LoadScene(dest.sceneName);
-        else
-            UnityEngine.SceneManagement.SceneManager.LoadScene(dest.sceneName);
     }
 
     private IEnumerator Fade(float from, float to, System.Action onComplete = null)

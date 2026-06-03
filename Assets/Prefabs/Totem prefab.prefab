@@ -50,6 +50,7 @@ MonoBehaviour:
   totemLight: {fileID: 2761463657897068935}
   savePanel: {fileID: 0}
   fadeDuration: 0.3
+  travelPanel: {fileID: 7526612673248728861, guid: d57d40c25edef564aad61b11e91ff8e1, type: 3}
 --- !u!61 &1627965224387864742
 BoxCollider2D:
   m_ObjectHideFlags: 0
