@@ -5613,6 +5613,26 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -200
       objectReference: {fileID: 0}
+    - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ba5c732165b4fe94fb8fe7c4d37ac4a9, type: 3}
+    - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6179754946345302411, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

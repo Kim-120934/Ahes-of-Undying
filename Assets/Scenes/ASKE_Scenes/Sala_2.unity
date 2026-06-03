@@ -3843,6 +3843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a2312909c5a0d49b4e7308f921ae29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnID: 
 --- !u!61 &569317702
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6359,6 +6360,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSpawnID: 
+  lastSafeScene: 
+  lastSpawnID: 
 --- !u!4 &1065776095
 Transform:
   m_ObjectHideFlags: 0
@@ -7352,6 +7355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a2312909c5a0d49b4e7308f921ae29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnID: 
 --- !u!61 &1333344258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48404,6 +48408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a2312909c5a0d49b4e7308f921ae29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnID: 
 --- !u!61 &1646989809
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51325,7 +51330,19 @@ PrefabInstance:
     - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -1128826867356018621, guid: 3a7afe27a7011034886bb58eb4455521, type: 3}
+      objectReference: {fileID: 21300000, guid: ba5c732165b4fe94fb8fe7c4d37ac4a9, type: 3}
+    - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5533420073304384200, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6179754946345302411, guid: 9bbb60e9adcab34429c142c20a409454, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -51929,6 +51946,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a2312909c5a0d49b4e7308f921ae29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnID: 
 --- !u!61 &2020954921
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52346,6 +52364,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5a2312909c5a0d49b4e7308f921ae29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnID: 
 --- !u!61 &2109973354
 BoxCollider2D:
   m_ObjectHideFlags: 0
